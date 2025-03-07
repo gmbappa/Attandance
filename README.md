@@ -91,8 +91,7 @@ alt="db" width="500" height="400" border="10" />
 
 **"OutOfOffice":** For intervals where the employee is outside the office. 
 
-
-**Database Script: ** 
+**"Database Script":**
 
 - HRTest=>Data=>[TestHR] Script All.sql
 - HRTest=>Data=>TestHR.bak
