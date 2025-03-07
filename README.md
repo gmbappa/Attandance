@@ -61,18 +61,18 @@ WHERE
 
 ```
 
-<img src="https://github.com/gmbappa/Attandance/tree/main/HRTest/Data/Image/PunchData.png" 
-alt="Login" width="500" height="400" border="10" />
+<img src="https://github.com/gmbappa/Attandance/blob/main/HRTest/Data/Image/PunchData.png" 
+alt="db" width="500" height="400" border="10" />
 
 
-<img src="https://github.com/gmbappa/Attandance/tree/main/HRTest/Data/Image/PunchData2.png" 
-alt="Login" width="500" height="400" border="10" />
+<img src="https://github.com/gmbappa/Attandance/blob/main/HRTest/Data/Image/PunchData2.png" 
+alt="db" width="500" height="400" border="10" />
 
-<img src="https://github.com/gmbappa/Attandance/tree/main/HRTest/Data/Image/PunchData3.png" 
-alt="Login" width="500" height="400" border="10" />
+<img src="https://github.com/gmbappa/Attandance/blob/main/HRTest/Data/Image/PunchData3.png" 
+alt="db" width="500" height="400" border="10" />
 
-<img src="https://github.com/gmbappa/Attandance/tree/main/HRTest/Data/Image/PunchData4.png" 
-alt="Login" width="500" height="400" border="10" />
+<img src="https://github.com/gmbappa/Attandance/blob/main/HRTest/Data/Image/PunchData4.png" 
+alt="db" width="500" height="400" border="10" />
 
 - Store Distinct Punches : Distinct punches that meet the time range criteria are stored temporarily in a table #DistinctPunches.
 
