@@ -1,0 +1,94 @@
+﻿@model IEnumerable<HRTest.Models.AttandanceData>
+
+@{
+    ViewData["Title"] = "Employee Time Card";
+}
+
+<div class="d-flex justify-content-center mb-4">
+    <div class="card p-4 shadow-sm" style="width: 800px; background-color: #f8f9fa; border-radius: 10px;">
+        <form method="get" asp-action="Index">
+            <div class="row">              
+                <div class="col-md-4 mb-3">
+                    <label for="EmployeeId">Employee ID:</label>
+                    <select class="form-control" id="EmployeeId" name="employeeId">                        
+                        @if (ViewBag.SelectEmployeeList != null)
+                        {
+                            foreach (var employee in ViewBag.SelectEmployeeList as SelectList)
+                            {
+                                <option value="@employee.Value">                                       
+                                    @employee.Text
+                                </option>
+                            }
+                        }
+                    </select>
+                </div>              
+                <div class="col-md-4 mb-3">
+                    <label for="Date">Date:</label>
+                    <input type="date" class="form-control" id="Date" name="date" value="@ViewBag.SelectedDate">
+                </div>               
+                <div class="col-md-4 d-flex align-items-end mb-3">
+                    <button type="submit" class="btn btn-primary w-100">Filter</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+<!-- Employee Time Card -->
+<div class="d-flex justify-content-center align-items-center mb-8">
+    <div class="card p-4 shadow-sm" style="width: 1100px; background-color: #f8f9fa; border-radius: 10px;">
+        <h1 class="fw-bold text-center" style="color: #007bff;">Employee Time Card</h1>
+        <h3 class="text-secondary mb-3">
+            Employee ID: <span class="fw-semibold">@Model.FirstOrDefault()?.EmployeeId</span>
+        </h3>
+        <h3 class="text-secondary">
+             Name: <span class="fw-semibold">@Model.FirstOrDefault()?.Name</span>
+        </h3>
+    </div>
+</div>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>In Time</th>
+            <th>Out Time</th>
+            <th>Working Minutes</th>
+            <th>Out Of Office Minutes</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Date)</td>
+                <td>@Html.DisplayFor(modelItem => item.InTime)</td>
+                <td>@Html.DisplayFor(modelItem => item.OutTime)</td>
+                <td>@Html.DisplayFor(modelItem => item.WorkingMinutes)</td>
+                <td>@Html.DisplayFor(modelItem => item.OutOfOfficeMinutes)</td>
+            </tr>
+        }
+
+        @{
+            // Calculate Totals
+            int totalWorkingMinutes = Model.Sum(item => item.WorkingMinutes);
+            int totalOutOfOfficeMinutes = Model.Sum(item => item.OutOfOfficeMinutes);
+           
+            var workingHours = TimeSpan.FromMinutes(totalWorkingMinutes);
+            var outOfOfficeHours = TimeSpan.FromMinutes(totalOutOfOfficeMinutes);
+        }
+    </tbody>
+
+    <tfoot>
+        <tr>
+            <td colspan="3" style="text-align: right; font-weight: bold;">Total:</td>
+            <td>@($"{workingHours.Hours:D2}:{workingHours.Minutes:D2}")</td>
+            <td>@($"{outOfOfficeHours.Hours:D2}:{outOfOfficeHours.Minutes:D2}")</td>
+        </tr>
+    </tfoot>
+
+</table>
