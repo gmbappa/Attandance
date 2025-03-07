@@ -34,11 +34,11 @@ HRTest
 ├── Views
     
    ```
-##Stored Procedure Description: **SP_EmployeeTimeCard**
+## Stored Procedure Description: **SP_EmployeeTimeCard**
 This stored procedure, SP_EmployeeTimeCard, is designed to calculate and analyze employee attendance data, specifically focusing on working hours and out-of-office intervals. The procedure processes raw punch data for a specific employee and date, calculates time intervals, and categorizes them as either "Office" or "OutOfOffice."
 
 
-###Workflow
+### Workflow
 
 - Fetch Max Punch Range : The maximum allowable interval between consecutive punches (in seconds) is fetched from the MaxPunch table using the following query:
 
@@ -46,17 +46,19 @@ This stored procedure, SP_EmployeeTimeCard, is designed to calculate and analyze
 SELECT MaxPunchRange FROM MaxPunch WHERE Id = 1;
 ```
 
-###Input Data:
+### Input Data:
 The punch data includes multiple entries with the same EmployeeID and Date but with varying PunchTime values.
 For example, IDs 12, 13, 14, and 15 occur within a 3-second window starting from 10:20:00. Only one of these punches is retained.
 
 - Filter Punches : A Common Table Expression (CTE) named FilteredPunches retrieves all punches for the given employee and date while calculating the previous punch time using the LAG() function.
 
-![Example Image](https://github.com/gmbappa/Attandance/tree/main/HRTest/Data/PunchData.PNG)
-![Example Image](https://github.com/gmbappa/Attandance/tree/main/HRTest/Data/PunchData2.PNG)
-![Example Image](https://github.com/gmbappa/Attandance/tree/main/HRTest/Data/PunchData3.PNG)
-![Example Image](https://github.com/gmbappa/Attandance/tree/main/HRTest/Data/PunchData4.PNG)
+![Example Image](https://github.com/gmbappa/Attandance/tree/main/HRTest/Data/Image/PunchData.PNG)
 
+![Example Image](https://github.com/gmbappa/Attandance/tree/main/HRTest/Data/Image/PunchData2.PNG)
+
+![Example Image](https://github.com/gmbappa/Attandance/tree/main/HRTest/Data/Image/PunchData3.PNG)
+
+![Example Image](https://github.com/gmbappa/Attandance/tree/main/HRTest/Data/Image/PunchData4.PNG)
 
 **Purpose:** This filters out punches that occur within an invalid timeframe (e.g., below the configured range).
 
@@ -76,8 +78,8 @@ WHERE
 
 - Interval Calculations : A third CTE named Calculations is used to:
 
-**Calculate the interval (in minutes) between paired punches.
-**Categorize intervals as:
+**Calculate the interval (in minutes) between paired punches.**
+**Categorize intervals as:**
 "Office": For intervals where the employee is assumed to be working.
 "OutOfOffice": For intervals where the employee is outside the office.
 
