@@ -84,8 +84,10 @@ alt="db" width="500" height="400" border="10" />
 - Interval Calculations : A third CTE named Calculations is used to:
 
 **Calculate the interval (in minutes) between paired punches.**
+
 **Categorize intervals as:**
-"Office": For intervals where the employee is assumed to be working.
-"OutOfOffice": For intervals where the employee is outside the office.
+
+**"Office":** For intervals where the employee is assumed to be working.
+**"OutOfOffice":** For intervals where the employee is outside the office.
 
 
