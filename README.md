@@ -52,13 +52,19 @@ For example, IDs 12, 13, 14, and 15 occur within a 3-second window starting from
 
 - Filter Punches : A Common Table Expression (CTE) named FilteredPunches retrieves all punches for the given employee and date while calculating the previous punch time using the LAG() function.
 
-![Example Image](https://github.com/gmbappa/Attandance/tree/main/HRTest/Data/Image/PunchData.PNG)
 
-![Example Image](https://github.com/gmbappa/Attandance/tree/main/HRTest/Data/Image/PunchData2.PNG)
+<img src="https://github.com/gmbappa/Attandance/tree/main/HRTest/Data/Image/PunchData.PNG" 
+alt="Login" width="500" height="400" border="10" />
 
-![Example Image](https://github.com/gmbappa/Attandance/tree/main/HRTest/Data/Image/PunchData3.PNG)
 
-![Example Image](https://github.com/gmbappa/Attandance/tree/main/HRTest/Data/Image/PunchData4.PNG)
+<img src="https://github.com/gmbappa/Attandance/tree/main/HRTest/Data/Image/PunchData2.PNG" 
+alt="Login" width="500" height="400" border="10" />
+
+<img src="https://github.com/gmbappa/Attandance/tree/main/HRTest/Data/Image/PunchData3.PNG" 
+alt="Login" width="500" height="400" border="10" />
+
+<img src="https://github.com/gmbappa/Attandance/tree/main/HRTest/Data/Image/PunchData4.PNG" 
+alt="Login" width="500" height="400" border="10" />
 
 **Purpose:** This filters out punches that occur within an invalid timeframe (e.g., below the configured range).
 
