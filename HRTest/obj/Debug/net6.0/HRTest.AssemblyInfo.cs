@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HRTest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cf9e157dda4fae9d0713227dd2cc982c9f3b0018")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8c2373ca5551dc8ede68621f39569b0274f576fa")]
 [assembly: System.Reflection.AssemblyProductAttribute("HRTest")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HRTest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

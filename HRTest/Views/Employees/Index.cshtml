@@ -10,7 +10,7 @@
 <p>
     <a class="btn btn-primary" asp-action="Create">Add New</a>
 </p>
-<table class="table">
+<table class="table table-bordered">
     <thead>
         <tr>
             <th>
@@ -62,11 +62,11 @@
                 @Html.DisplayFor(modelItem => item.IsDeleted)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-action="Edit" class="btn btn-success btn-sm mb-1" asp-route-id="@item.Id">Edit</a> |
+               @*  <a asp-action="Details" asp-route-id="@item.Id">Details</a> | *@
+                    <a asp-action="Delete" class="btn btn-danger btn-sm mb-1" asp-route-id="@item.Id">Delete</a>
             </td>
-        </tr>
+        </tr> 
 }
     </tbody>
 </table>

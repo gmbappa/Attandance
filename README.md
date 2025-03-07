@@ -87,7 +87,14 @@ alt="db" width="500" height="400" border="10" />
 
 **Categorize intervals as:**
 
-**"Office":** For intervals where the employee is assumed to be working.
-**"OutOfOffice":** For intervals where the employee is outside the office.
+**"Office":** For intervals where the employee is assumed to be working. 
+
+**"OutOfOffice":** For intervals where the employee is outside the office. 
+
+
+**Database Script: ** 
+
+- HRTest=>Data=>[TestHR] Script All.sql
+- HRTest=>Data=>TestHR.bak
 
 

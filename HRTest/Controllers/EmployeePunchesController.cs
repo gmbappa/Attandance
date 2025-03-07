@@ -15,11 +15,29 @@ namespace HRTest.Controllers
         }
 
         // GET: EmployeePunches
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? pageNumber, int pageSize = 10)
         {
-              return _context.EmployeePunches != null ? 
-                          View(await _context.EmployeePunches.ToListAsync()) :
-                          Problem("Entity set 'ApplicationDbContext.EmployeePunch'  is null.");
+            if (_context.EmployeePunches == null)
+            {
+                return Problem("Entity set 'ApplicationDbContext.EmployeePunches' is null.");
+            }
+
+            var punches = _context.EmployeePunches.AsQueryable();
+           
+            pageNumber ??= 1;           
+            int totalRecords = await punches.CountAsync();
+            
+            var paginatedList = await punches
+                .Skip((pageNumber.Value - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+            
+            ViewBag.CurrentPage = pageNumber.Value;
+            ViewBag.PageSize = pageSize;
+            ViewBag.TotalRecords = totalRecords;
+            ViewBag.TotalPages = (int)Math.Ceiling((double)totalRecords / pageSize);
+
+            return View(paginatedList);
         }
 
         // GET: EmployeePunches/Details/5
