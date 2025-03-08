@@ -40,7 +40,7 @@ This stored procedure, SP_EmployeeTimeCard, is designed to calculate and analyze
 
 ### Workflow
 
-- Fetch Max Punch Range : The maximum allowable interval between consecutive punches (in seconds) is fetched from the MaxPunch table using the following query:
+- Fetch Max Punch Range : The maximum allowable interval between **consecutive punches (in seconds)** is fetched from the MaxPunch table using the following query:
 
 ```sql
 SELECT MaxPunchRange FROM MaxPunch WHERE Id = 1;
@@ -48,7 +48,7 @@ SELECT MaxPunchRange FROM MaxPunch WHERE Id = 1;
 
 ### Input Data:
 The punch data includes multiple entries with the same EmployeeID and Date but with varying PunchTime values.
-For example, IDs 12, 13, 14, and 15 occur within a 3-second window starting from 10:20:00. Only one of these punches is retained.
+For example, **IDs 12, 13, 14, and 15** occur within a **3-second** window starting from **10:20:00**. Only one of these punches is retained.
 
 - Filter Punches : A Common Table Expression (CTE) named FilteredPunches retrieves all punches for the given employee and date while calculating the previous punch time using the LAG() function.
 
@@ -93,7 +93,7 @@ alt="db" width="500" height="400" border="10" />
 
 **"Database Script":**
 
-- HRTest=>Data=>[TestHR] Script All.sql
-- HRTest=>Data=>TestHR.bak
+- HRTest=>Data=> **[TestHR] Script All.sql**
+- HRTest=>Data=> **TestHR.bak**
 
 
