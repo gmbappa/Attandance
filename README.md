@@ -1,5 +1,5 @@
 # Attandance
-Attandance With single Device
+Attandance with single Device
 
 ## Project Overview
 
